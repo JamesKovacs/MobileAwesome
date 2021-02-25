@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using MobileAwesomeApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +10,16 @@ namespace MobileAwesomeApp.Views
         public CreateFeastPage()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var viewModel = DependencyService.Resolve<CreateFeastViewModel>();
+            BindingContext = viewModel;
+            await viewModel.Render();
+            FeastKeyLabel.Text = viewModel.FeastKey;
         }
     }
 }

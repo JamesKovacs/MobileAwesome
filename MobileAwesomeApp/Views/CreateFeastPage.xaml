@@ -5,9 +5,13 @@
              x:Class="MobileAwesomeApp.Views.CreateFeastPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="Feast Created" FontSize="Title" HorizontalTextAlignment="Center"/>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <StackLayout>
+                    <Label x:Name="FeastKeyLabel" Text="Generating your feast key..." HorizontalTextAlignment="Center" TextColor="White" FontFamily="MarkerFelt-Thin" FontSize="Title" FontAttributes="Bold" />
+                </StackLayout>
+            </Frame>
+            <Label Text="Share this code with your friends so they can join your feast!" HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
