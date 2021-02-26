@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using MobileAwesomeApp.Models;
 using MobileAwesomeApp.Services;
 using Xamarin.Essentials;
-using Xamarin.Forms.Internals;
 
 namespace MobileAwesomeApp.ViewModels
 {
@@ -21,7 +20,8 @@ namespace MobileAwesomeApp.ViewModels
 
         public async Task JoinFeast()
         {
-            var user = new User {Email = "john@example.com", FirstName = "John", LastName = "Example", CurrentLocation = new Location()};
+            var location = await Geolocation.GetLocationAsync();
+            var user = new User {Email = "john@example.com", FirstName = "John", LastName = "Example", CurrentLocation = new Coordinates(location)};
 
             for (var i=0; i<_foods.Length; i++)
             {

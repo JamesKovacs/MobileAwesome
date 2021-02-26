@@ -19,7 +19,8 @@ namespace MobileAwesomeApp.ViewModels
 
         public async Task Render()
         {
-            var user = new User {Email = "sally@example.com", FirstName = "Sally", LastName = "Example", CurrentLocation = new Location()};
+            var location = await Geolocation.GetLocationAsync();
+            var user = new User {Email = "sally@example.com", FirstName = "Sally", LastName = "Example", CurrentLocation = new Coordinates(location)};
             var feast = await _feastService.CreateNewFeastAsync(user);
             _feastKey = feast.FeastKey;
         }

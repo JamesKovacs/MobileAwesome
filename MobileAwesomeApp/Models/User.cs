@@ -1,5 +1,4 @@
 using MongoDB.Bson;
-using Xamarin.Essentials;
 
 namespace MobileAwesomeApp.Models
 {
@@ -9,6 +8,6 @@ namespace MobileAwesomeApp.Models
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Location CurrentLocation { get; set; }
+        public Coordinates CurrentLocation { get; set; }
     }
 }
